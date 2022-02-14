@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+<section class="content">
+
+         <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Create New Plan</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" name="crplan" method="post">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                            <div class="form-group">
+                             <label>Plan Name</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="text" class="form-control" id="planname" name="planname" required="">
+                            </div> </div>
+
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="type">Offer Price </label> <span style="color:red"><strong>*</strong></span>
+                              <input type="number" class="form-control" id="oprice" name="oprice" required="" min="1">
+                            </div>
+                            </div></div>
+                        <div class="row">
+                            <div class="col-md-1">
+                             <div class="form-group">
+                            <label for="type">Inc Tax </label> <span style="color:red"><strong>*</strong></span><br> 
+                            <input type="checkbox" name="checktax" class="form-check-input" id="checktax" checked>
+                            </div>
+                            </div>
+                            <div class="col-md-5">
+                            <div class="form-group">
+                            <label for="type">Total Price </label> <span style="color:red"><strong>*</strong></span>
+                            <input type="text" class="form-control" id="tprice" name="tprice" readonly="">
+                            </div></div>
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="tax">Tax Group</label>
+                            <select name="tax" class="form-control" id="tax" readonly="">
+                            <option value="GST">GST</option>
+                            </select>
+                            </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="sac">SAC Code</label>
+                             <input type="text" class="form-control" id="sac" name="sac" value="998422" readonly="">
+                            </div>  
+                            </div>
+                             <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="name">Validity</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="number" class="form-control" id="validity" name="validity" min="1" required="">
+                          <input type="hidden" id="period" name="access" class="form-control" placeholder="Access Period" readonly="">
+                            </div></div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="type">Time</label> <span style="color:red"><strong>*</strong></span>
+                            <select id="type" class="form-control" name="time" required="">                              
+                            <option value="Year">Year</option>
+                            <option value="Month" selected="">Month</option>  
+                            <option value="Day">Day</option>                              
+                            </select>
+                            </div>
+                            </div>
+
+                            
+                            <div class="form-group col-md-6">
+                             <label for="email">Rate Limit</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="text" class="form-control" name="rate" id="rate" placeholder="512K/1M 3M/4M 2M/3M 8M/8M" required="">
+                            </div></div>
+
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="name">Quota Limit</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="number" class="form-control" id="quota" name="quota" min="1" required="">
+                             <input type="hidden" id="QuotaLimit" name="QuotaLimit" class="form-control" placeholder="Quota" readonly="">             
+                            </div></div>
+                            
+                            <div class="col-md-6">
+                            <div class="form-group">
+                               <label for="type">Volume</label> <span style="color:red"><strong>*</strong></span>
+                                 <select class="form-control" id="volume" name="volume" required="">
+                                                            <option value="B">B</option>
+                                                            <option value="KB">KB</option>
+                                                            <option value="MB">MB</option>
+                                                            <option value="GB">GB</option>
+                                                            <option value="TB" selected="">TB</option>
+                                                        </select>
+                            </div></div></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description" placeholder="Description..."></textarea>
+                            </div>
+                            </div>
+                            </div>
+                               <div class="row mt-3 mb-3">
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-danger previous" id="prevtab" style="display:none;">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-success next" id="submit" onclick=validateForm()>Create Plan</button>
+                                    </div>
+                                </div>
+                </div>
+                <!-- /.card-body -->
+
+              </form>
+            </div>
+            
+       
+
+    </section>
+</div>
+{{> footer}}
+    </div>
+{{> cdnjs}}
+<script src="js/pages/plan.js">
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <section class="section">
+    <a class="btn btn-dark mb-3" href="/pricebookinfo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+  <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"></path>
+  <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"></path>
+</svg> Back</a>
+        <div class="card">
+        <div class="card-header">
+        <h4 class="card-title">Edit Pricebook </h4>
+        </div>
+        <div class="card-body">
+        <div class="row">
+        <table class="table" id="myTableNew" width="100%">
+        <thead>
+            <tr>
+                <th>Plan Name</th>
+                <th>Base MRP</th>
+                <th>MRP</th>
+                <th>Retailer Price</th>
+                <th>Offer Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Plan1</td>
+                <td>200</td>
+                <td>100</td>
+                <td>250</td>
+                <td>300</td>
+                <td><a href="#" class="btn btn-primary text-decoration-none edit"><i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger text-decoration-none remove"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                <tr>
+                <td>Plan2</td>
+                <td>300</td>
+                <td>200</td>
+                <td>150</td>
+                <td>500</td>
+                <td><a href="#" class="btn btn-primary text-decoration-none edit"><i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger text-decoration-none remove"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                <tr>
+                <td>Plan3</td>
+                <td>234</td>
+                <td>213</td>
+                <td>546</td>
+                <td>785</td>
+                <td><a href="#" class="btn btn-primary text-decoration-none edit"><i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger text-decoration-none remove"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                <tr>
+                <td>Plan4</td>
+                <td>152</td>
+                <td>201</td>
+                <td>102</td>
+                <td>326</td>
+                <td><a href="#" class="btn btn-primary text-decoration-none edit"><i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger text-decoration-none remove"><i class="bi bi-trash"></i></a></td>
+                </tr>
+                <tr>
+                <td>Plan5</td>
+                <td>120</td>
+                <td>842</td>
+                <td>621</td>
+                <td>420</td>
+                <td><a href="#" class="btn btn-primary text-decoration-none edit"><i class="bi bi-pencil"></i></a> <a href="#" class="btn btn-danger text-decoration-none remove"><i class="bi bi-trash"></i></a></td>
+                </tr>
+        </tbody>
+    </table>
+    </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+{{> footer}}
+    </div>
+    </div>
+
+    </div>
+    <div class="modal fade text-left" id="editplan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change Pricebook Plan 
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Plan Name </label>
+                        <input type="text" placeholder="Plan Name" id="plan" class="form-control" readonly style="background: white;">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Base MRP </label>
+                        <input type="number" placeholder="Base MRP" id="basemrp" class="form-control" readonly style="background: white;">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>MRP </label>
+                        <input type="number" placeholder="MRP" id="mrp" class="form-control">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Retailer Price</label>
+                        <input type="number" placeholder="Retailer Price" id="retprice" class="form-control" readonly style="background: white;">
+                    </div>
+                    </div>
+                        </div>
+                    <div class="form-group">
+                        <label>Offer Price</label>
+                        <input type="number" placeholder="Offer Price" id="offprice" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p style="color: red;" class="me-auto">Note: You can only change MRP and Offer Price .</p>
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{> cdnjs}}
+<script src="js/pages/editpricebook.js"></script>
+</body>
+
+</html>

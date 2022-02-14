@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <a class="btn btn-dark" href="/viewopdet"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+  <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"></path>
+  <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"></path>
+</svg> Back</a>
+            <section class="section">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">LCO Pricebook</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            
+                            <div class="table-responsive">
+                                <table class="table" id="myTable" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Email</th>
+                                            <th>Plan Name</th>
+                                            <th>Retailer Price</th>
+                                            <th>MRP</th>
+                                            <th>Validity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+        {{> footer}}
+    </div>
+
+        <div class="modal fade text-left" id="accstatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Edit Pricebook
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label>Current Plan Name </label>
+                        <input type="text" placeholder="Current Plan Name" class="form-control" disabled>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Price </label>
+                        <input type="text" placeholder="Price" class="form-control" disabled>
+                    </div>
+                    </div>
+                        </div>
+                    <div class="form-group">
+                        <label>New Price </label>
+                        <input type="text" placeholder="New Price" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{> cdnjs}}
+    <script src="js/pages/viewlcopricebook.js"></script>
+</body>
+
+</html>

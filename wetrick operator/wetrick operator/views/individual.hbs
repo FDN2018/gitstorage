@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+    {{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Create Individual Customer</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="list-group list-group-horizontal-sm mb-1 text-center" role="tablist">
+                                <a class="list-group-item list-group-item-action active" id="account-list"
+                                    data-bs-toggle="list" href="#account" role="tab"><i class="bi bi-person"></i>
+                                    Account</a>
+                                <a class="list-group-item list-group-item-action " id="address-list"
+                                    data-bs-toggle="list" href="#address" role="tab"><i class="bi bi-geo-alt"></i>
+                                    Address</a>
+                                <a class="list-group-item list-group-item-action " id="network-list"
+                                    data-bs-toggle="list" href="#network" role="tab"><i class="bi bi-hdd-network"></i>
+                                    Network</a>
+                                <a class="list-group-item list-group-item-action" id="plan-list" data-bs-toggle="list"
+                                    href="#plan" role="tab"><i class="bi bi-journal"></i> Plan</a>
+                                <a class="list-group-item list-group-item-action" id="upload-list" data-bs-toggle="list"
+                                    href="#upload" role="tab"><i class="bi bi-upload"></i> Upload</a>
+                            </div>
+                            <form name="indcust" method="post">
+                            <div class="tab-content text-justify">
+                                <div class="tab-pane fade show active" id="account" role="tabpanel"
+                                    aria-labelledby="account-list">
+                                    <p class="text-center font-bold mt-4">Customer Information</p>
+                                    <p style="color: red;">* Required Fields</p>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Full name</label>
+                                            <span style="color:red"><strong>*</strong></span>
+                                            <input type="text" name="fullname" id="fullname" placeholder="Full name"
+                                                class="form-control" required>
+                                            <span id="fname" style="color:red"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">DOB</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="date" id="dob" name="dob" placeholder="Date of Birth"
+                                                    class="form-control" required>
+                                                <span id="doberr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Mobile No</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="number" placeholder="Mobile No" id="mobileno"
+                                                    name="mobileno" onKeyPress="if(this.value.length==10) return false;"
+                                                    autocomplete="off" class="form-control" required>
+                                                <span id="merr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Email</label>
+                                                <input type="email" name="email" id="email" placeholder="Email"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Gender</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <div class="row mt-2">
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input type="radio" name="gender" id="male"
+                                                                class="form-check-input" value="male">
+                                                            <label class="form-check-label">Male</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input type="radio" name="gender" id="female" value="female"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label">Female</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-check">
+                                                            <input type="radio" name="gender" id="other" value="other"
+                                                                class="form-check-input" checked>
+                                                            <label class="form-check-label">Prefer not to say</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="document">Customer Photo</label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <input type="file" name="cuploads" class="form-control" id="cuploads"  onchange=ValidateSingleInput(this) required>
+                                        <span id="custerr" style="color:red"></span>
+                                        <p style="color: red;">Note : Please upload pdf/ jpg/ png/ jpeg for view purpose.</p>
+                                    </div>
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-danger previous"
+                                               type="button" id="tab1prev" style="display: none;">Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-success next" id="tab1next"
+                                                type="button" onclick=Tab1()>Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-list">
+                                    <p class="text-center font-bold mt-4">Permanent Address</p>
+                                    <p style="color: red;">* Required Fields</p>  
+                                    <div class="row">
+     
+                                      <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Address</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" id="paddress" name="paddress" placeholder="Address"
+                                                    class="form-control" required>
+                                                <span id="adderr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Pincode</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="number" id="pincode" name="pincode" min="1"
+                                                    onKeyPress="if(this.value.length==6) return false;"
+                                                    placeholder="Pincode" class="form-control" required>
+                                                <span id="iperr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">District</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="district" id="district"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="diserr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">State</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="state" id="state"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="stateerr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Country</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="country" id="country"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="counerr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="checkF">
+                                        <input type="checkbox" id="copyadd" onchange=copyAdd()> <Label>
+                                            <p class="font-bold"> Copy Permanent Address To
+                                                Installation Address</p>
+                                        </Label>
+
+                                    </div>
+
+                                    <!---Installation Address-->
+                                    <p class="text-center font-bold mt-4">Installation Address</p>
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="">Address</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" id="iaddress" name="iaddress" placeholder="Installation Address"
+                                                    class="form-control" required>
+                                                <span id="iadderr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Pincode</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="number" id="ipincode" name="ipincode" min="1"
+                                                    onKeyPress="if(this.value.length==6) return false;"
+                                                    placeholder="Pincode" class="form-control" required>
+                                                <span id="iperr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">District</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="idistrict" id="idistrict"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="diserr" style="color:red"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">State</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="istate" id="istate"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="stateerr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Country</label>
+                                                <span style="color:red"><strong>*</strong></span>
+                                                <input type="text" name="icountry" id="icountry"
+                                                    style="background-color: white;" class="form-control">
+                                                <span id="counerr" style="color:red"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-danger previous"
+                                               type="button" id="tab2prev" onclick=Tab2Prev()>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-success next" id="tab2next"
+                                                type="button" onclick=Tab2()>Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="network" role="tabpanel" aria-labelledby="network-list">
+                                    <p class="text-center font-bold mt-4">Assign Network Details</p>
+                                    <p style="color: red;">* Required Fields</p>
+                                    <div class="form-group">
+                                        <label for="">Brand Name / Short Name</label>
+                                        <input type="text" name="description" id="description"
+                                            placeholder="Any recognisable name" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Username</label> <span style="color:red"><strong>*</strong></span>
+                                        <input type="text" id="uname" name="username" class="form-control"
+                                            placeholder="User Name" autocomplete="off" maxlength="20" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Network Type </label>
+                                        <select name="networktype" class="form-control" id="networktype">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value="PPPOE" selected>PPPOE</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pool Type </label>
+                                        <select name="pooltype" class="form-control" id="selectBox"
+                                            onchange="changeFunc();">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value="Default" selected>Default Pool</option>
+                                            <option value="Static">Static Pool</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label style="display: none" id="textboxes">Select Location</label>
+                                        <select name="nas" class="form-control" style="display: none" id="textboxes1">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display: none" id="textboxes2">IP Pool</label>
+                                        <select name="ippool" class="form-control" style="display: none"
+                                            id="textboxes3">
+                                            <option value="" selected disabled>-Select IP Pool-</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display: none" id="textboxes4">Select Available IP </label>
+                                        <select name="availableip" class="form-control" style="display: none"
+                                            id="textboxes5">
+                                            <option value="" selected disabled>-Select IP -</option>
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="display: none" id="textboxes44">ALL IPs </label>
+                                        <input type="checkbox" style="display: none" name="allip" id="textboxes45"
+                                            class="textboxes45">
+                                    </div>
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-danger previous"
+                                               type="button" id="tab3prev" onclick=Tab3Prev()>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-success next" id="tab3next"
+                                                type="button" onclick=Tab3()>Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="plan" role="tabpanel" aria-labelledby="plan-list">
+                                    <p class="text-center font-bold mt-4">Assign Plan Details</p>
+                                    <p style="color: red;">* Required Fields</p>
+                                    <div class="form-group">
+                                        <label>Plans </label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <select name="planname" class="form-control" id="planname">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value=""></option>
+                                        </select>
+                                        <span id="planerr" style="color:red"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="text" style="display: none;" id="nprice">Plan Price</label>
+                                        <input type="text" class="form-control" id="newprice" name="newprice" value=""
+                                            readonly style="display: none;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text" style="display: none;" id="validity">Validity(In Days)</label>
+                                        <input type="text" class="form-control" id="validity1" name="validity" value=""
+                                            readonly style="display: none;">
+                                    </div>
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-danger previous"
+                                               type="button" id="tab4prev" onclick=Tab4Prev()>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-success next" id="tab4next"
+                                                type="button" onclick=Tab4()>Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="upload" role="tabpanel" aria-labelledby="upload-list">
+                                    <p class="text-center font-bold mt-4">Upload Documents Here</p>
+                                    <p style="color: red;">* Required Fields</p>
+                                    <div class="form-group">
+                                        <label for="document">Documents Type</label> <span style="color:red"><strong>*</strong></span>
+                                        <select name="dtype" id="dtype" class="form-control" onchange="checkmode(this)">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value="Aadhar Card">Aadhar Card</option>
+                                            <option value="Voter Card">Voter Card</option>
+                                            <option value="Insurance Paper">Insurance Paper</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group" id="docid" style="display: none;">
+                                        <label id="doc"></label>
+
+                                        <input type="text" placeholder="ID number" id="idnumber" name="idnumber"
+                                            class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="document">Upload Documents</label>
+                                                <input type="file" name="uploads" class="form-control" id="uploads" onchange=ValidateSingleInput(this)>
+                                                <p style="color: red;">Note : Please upload pdf/ jpg/ png/ jpeg for view purpose.</p>
+                                            </div>
+                                            <div class="form-group" id="docid" style="display: none;">
+                                                <label id="doc"></label>
+                                                <input type="text" placeholder="ID number" id="idnumber" name="idnumber"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group mt-4" id="addsign">
+                                                <button class="btn btn-outline-primary"><i
+                                                        class="bi bi-plus-circle-fill" style="cursor: pointer;"> Add
+                                                        Document</i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered mb-0" id="myTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Username</th>
+                                                    <th>Document Name</th>
+                                                    <th>Document Type</th>
+                                                    <th>Document Details</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tddata">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-danger previous"
+                                               type="button" id="tab5prev" onclick=Tab5Prev()>Previous</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <button class="btn btn-block btn-success next" id="submit" onclick=validateForm()>Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></form>
+                            <div class="list-group list-group-horizontal-sm mb-1 text-center mt-4" role="tablist">
+                                <a class="list-group-item list-group-item-action " id="account1-list"
+                                    data-bs-toggle="list" href="#account" role="tab"><i class="bi bi-person"></i>
+                                    Account</a>
+                                <a class="list-group-item list-group-item-action " id="address1-list"
+                                    data-bs-toggle="list" href="#address" role="tab"><i class="bi bi-geo-alt"></i>
+                                    Address</a>
+                                <a class="list-group-item list-group-item-action " id="network1-list"
+                                    data-bs-toggle="list" href="#network" role="tab"><i class="bi bi-hdd-network"></i>
+                                    Network</a>
+                                <a class="list-group-item list-group-item-action" id="plan1-list" data-bs-toggle="list"
+                                    href="#plan" role="tab"><i class="bi bi-journal"></i> Plan</a>
+                                <a class="list-group-item list-group-item-action" id="upload1-list"
+                                    data-bs-toggle="list" href="#upload" role="tab"><i class="bi bi-upload"></i>
+                                    Upload</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+{{> footer}}
+    </div>
+{{> cdnjs}}
+         <script src="js/page/individual.js"></script>
+</body>
+
+</html>

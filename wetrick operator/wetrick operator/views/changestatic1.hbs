@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+    {{> sidebar}}
+    <div id="main">
+    {{> role}}
+        <div id="main-content">
+    <section class="content">
+         <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Change Static IP</h3>
+              </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">Assigned IP</label>
+                        <select class="form-control" name="assip" id="assip">
+                            <option>-Select-</option>
+                            <option value="103.113.64.182">103.113.64.182</option>
+                        </select>
+                        </div>
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">Assigned Pool</label>
+                        <select class="form-control" name="asspool" id="asspool">
+                            <option>-Select-</option>
+                            <option value="103.113.64.176/28">103.113.64.176/28</option>
+                        </select>
+                        </div>
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">Assigned NAS</label>
+                        <select class="form-control" name="assnas" id="assnas">
+                            <option>-Select-</option>
+                            <option value="103.113.64.45">103.113.64.45</option>
+                        </select>
+                        </div>
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">Select Location</label>
+                        <select class="form-control" name="selloc" id="selloc">
+                        <option>-Select-</option>
+                        <option value="Rajdhani Park">Rajdhani Park</option>
+                        <option value="NSP">NSP</option>
+                        </select>
+                        </div>
+                        <div id="ippoolcont">
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">IP Pool</label>
+                        <select class="form-control" name="ippool" id="ippool">
+                        <option>-Select-</option>
+                        <option value="103.113.64.182/30">103.113.64.182/30</option>
+                        </select>
+                        </div>
+                        </div>
+                        <div id="selipcont">
+                        <div class="col-md-12">
+                        <label class="form-group mt-3">Select IP</label>
+                        <select class="form-control" name="selip" id="selip">
+                            <option>-Select-</option>
+                            <option value="103.113.64.110">103.113.64.110</option>
+                        </select>
+                        <div class="col-md-12">
+                        <input type="checkbox" class="form-check-input mt-3">
+                        <label class="form-check-label mt-3">View All IP</label>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+
+                            <input type="submit" class="btn btn-primary mt-3" name="chstaticip" value="Change Static Ip">
+
+                        </div>
+                    </div>  
+                </div>
+            </div>
+    </section>
+</div>
+    {{> footer}}
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+
+   {{> cdnjs}}
+</body>
+
+</html>

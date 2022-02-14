@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{> headcdn}}
+</head>
+<body>
+    {{> sidebar}}
+    <div id="main">
+        {{> role}}
+        <div id="main-content">
+        <ul role="tablist" class="nav bg-light-primary nav-pills rounded-pill nav-fill mb-2">
+          <li class="nav-item">
+            <a  href="/indcustomer" class="nav-link rounded-pill "><i class="bi bi-people-fill"></i>  Total Ind Customer</a>
+          </li>
+          
+          <li class="nav-item">
+            <a  href="/onlindcust" class="nav-link rounded-pill"><i class="bi bi-toggle-on"></i>  Online Ind Customer</a>
+          </li>
+          <li class="nav-item">
+            <a  href="/ofindcust" class="nav-link rounded-pill"><i class="bi bi-toggle-off"></i>  Recently Ind Offline</a>
+          </li>
+
+          <li class="nav-item">
+            <a  href="/susindcust" class="nav-link rounded-pill"><i class="bi bi-person-x-fill"></i>  Suspended Ind Customer</a>
+          </li>
+
+           <li class="nav-item">
+            <a  href="/upindcust" class="nav-link rounded-pill" ><i class="bi bi-wallet2"></i>  Upcoming Ind Renewal</a>
+          </li>
+
+           <li class="nav-item">
+            <a  href="/exindcust" class="nav-link rounded-pill" ><i class="bi bi-exclamation-octagon-fill"></i>  Pending\Expired Ind Renewal</a>
+          </li>
+          <li class="nav-item">
+            <a  href="/actindcust" class="nav-link rounded-pill font-bold" style="background-color:teal; color:white;"><i class="bi bi-award-fill"></i>  Active Ind Customer</a></li>
+        </ul>
+    <section class="section">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">Active Individual Customers</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table" id="myTable" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Fullname</th>
+                                            <th>Username</th>
+                                            <th>Mobile No</th>
+                                            <th>Planname</th>
+                                            <th>Registration Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="/viewcustomer">Abhishek</a></td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>123454</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>dsfddfs</td>
+                                            <td><a href="" class="datafetch" data-bs-toggle="modal" data-bs-target="#accstatus"><i class="bi bi-person-x-fill"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Fullname</th>
+                                            <th>Username</th>
+                                            <th>Mobile No</th>
+                                            <th>Planname</th>
+                                            <th>Registration Date</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+{{> footer}}
+    </div>
+        <div class="modal fade text-left" id="accstatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change User Account Status
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label>Full Name </label>
+                        <input type="text" placeholder="Full Name" id="fname" class="form-control">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Username </label>
+                        <input type="text" placeholder="Username" id="username" class="form-control">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form-group">
+                        <label>Mobile No. </label>
+                        <input type="text" placeholder="Mobile No." id="phone" class="form-control">
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Current Status </label>
+                        <input type="text" placeholder="Current Status" id="curstate" class="form-control">
+                    </div>
+                    </div>
+                        </div>
+                    <div class="form-group">
+                        <label>Choose</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="Suspend">Suspend</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+{{> cdnjs}}
+<script src="js/page/actindcust.js"></script>
+</body>
+</html>

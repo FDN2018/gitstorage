@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+<section class="content"> <form action="#" name="crprice" method="post">
+    <div class="row"><div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            <input class="btn btn-success btn-block ms-auto mb-3" id="submitTable" type="submit" style="display: none;" onclick=validateForm()>
+                        </div>
+                    </div>
+         <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Price Book Information</h3>
+                
+              </div>
+             
+                <div class="card-body">
+                    
+                  <div class="row">
+                      <div class="col-md-3">
+                            <div class="form-group">
+                             <label>Pricebook Name</label><span style="color:red"><strong>*</strong></span>
+                             <input type="text" class="form-control" id="pricename" name="pricename" required="">
+                            </div> </div>
+
+                            <div class="col-md-3">
+                            <div class="form-group">
+                            <label for="type">Pricebook For</label><span style="color:red"><strong>*</strong></span>
+                            <select class="form-control" onchange=bookFor(this.value) id="seluser" name="seluser" required="">
+                            <option selected disabled value="">Select</option>
+                            <option value="reseller">Reseller</option>
+                            <option value="lco">LCO</option>
+                            </select>
+                            </div>
+                            </div>
+                            <div class="col-md-3" id="asresblock" style="display: none;">
+                            <div class="form-group">
+                            <label for="type">Associated Reseller</label><span style="color:red"><strong>*</strong></span>
+                            <select class="form-control">
+                            <option selected disabled>Select</option>
+                            </select>
+                            </div>
+                            </div>
+                            <div class="col-md-3" id="lcoblock" style="display: none;">
+                            <div class="form-group">
+                            <label for="type">Select LCO</label><span style="color:red"><strong>*</strong></span>
+                            <select class="form-control">
+                            <option selected disabled>Select</option>
+                            </select>
+                            </div>
+                            </div>
+                            <div class="col-md-6" id="resblock" style="display: block;">
+                            <div class="form-group">
+                            <label for="type">Select Reseller</label><span style="color:red"><strong>*</strong></span>
+                            <select class="form-control">
+                            <option selected disabled>Select</option>
+                            </select>
+                            </div>
+                            </div>
+                            </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="type">Status</label><span style="color:red"><strong>*</strong></span>
+                            <select class="form-control" id="pricestatus" name="pricestatus" required>
+                            <option selected disabled value="">Select</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            </select>
+                            </div>
+                            </div>
+                            <div class="col-md-3">
+                            <div class="form-group">
+                            <label for="type">From Date </label><span style="color:red"><strong>*</strong></span>
+                            <input type="date" class="form-control" id="fdate" name="fdate" disabled>
+                            </div>
+                            </div>
+                            <div class="col-md-3">
+                            <div class="form-group">
+                            <label for="tax">To Date</label><span style="color:red"><strong>*</strong></span>
+                            <input type="date" class="form-control" id="tdate" name="tdate">
+                            </div>
+                            </div>
+                        </div>
+                            <div class="row">                            
+                            <div class="col-md-12">
+                            <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" name="description" placeholder="Description..."></textarea>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-md-12">
+                                <button class="btn btn-primary addplan" data-bs-toggle="modal" type="button" data-bs-target="#plantable">Add Plan</button>
+                                </div>
+                                </div>
+                
+                </div>
+                
+                </div>
+                <div class="card" id="plantabfinal" style="display: none;">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Plan To Pricebook</h3>
+                    </div>
+                    <div class="card-body">
+                    <table class="table" id="myTableNew" width="100%">
+        <thead>
+            <tr>
+                <th>Plan Name</th>
+                <th>Base MRP</th>
+                <th>MRP</th>
+                <th>Retailer Price</th>
+                <th>Offer Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+       
+
+    </table>
+    
+                    </div>
+            </div></form>
+    </section>
+</div>
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+                <strong>Copyright &copy; <a href="" class="text-decoration-none">weTRICK</a>.</strong> | All rights
+                reserved.
+            </div>
+        </footer>
+    </div>
+    <div class="modal fade text-left" id="plantable" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-full" role="document">
+    <div class="modal-content">
+    <div class="modal-header bg-primary">
+    <h5 class="modal-title white" id="myModalLabel160">Add Plan</h5>
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">                                                                      <i data-feather="x"></i></button>
+    </div>
+    <div class="modal-body">
+    <table class="display" id="myTable" width="100%" >
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="check-all" class="form-check-input"></th>
+                <th>Plan Name</th>
+                <th>Base MRP</th>
+                <th>MRP</th>
+                <th>Retailer Price</th>
+                <th>Offer Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td >Plan1</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td >Plan2</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan3</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan4</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan5</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan6</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan7</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan8</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan9</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="check" class="form-check-input"></td>
+                <td>Plan10</td>
+                <td>123454</td>
+                <td contenteditable="true">1213545</td>
+                <td>dsafdf</td>
+                <td contenteditable="true">12121</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="modal-footer">
+    <p style="color: red;" class="me-auto">Note: You can change MRP and Offer Price .</p>
+    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+    <i class="bx bx-x d-block d-sm-none"></i>Close</button>
+    <button type="button" class="btn btn-primary ml-1" id="addbtn">
+    <i class="bx bx-check d-block d-sm-none"></i>Add Plan</button>    
+    </div>
+    </div>
+    </div>
+    </div>
+{{> cdnjs}}
+<script src="js/pages/price.js"></script>
+</body>
+</html>

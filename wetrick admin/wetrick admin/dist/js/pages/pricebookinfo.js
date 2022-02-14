@@ -1,0 +1,3 @@
+$("#planbook").DataTable({
+    dom:"ftrip"
+});

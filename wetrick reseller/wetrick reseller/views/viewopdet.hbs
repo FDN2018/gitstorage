@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {{> headcdn}}
+</head>
+
+<body>
+    {{> sidebar}}
+
+    <div id="main">
+       {{> role}}
+        <div id="main-content">
+            <div class="btn-group dropdown me-1 mb-1">
+                <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                    <span class="sr-only"><i class="bi bi-sliders"></i> Control Operator </span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#trbal"><i
+                            class="bi bi-laptop"></i>
+                       Transfer Balance</a>
+                    <a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#password"><i
+                            class="bi bi-key"></i> Password</a>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#revbal"><i
+                            class="bi bi-journal"></i>
+                        Reverse Balance</a>
+                    <a class="dropdown-item" href="/lcozonetra"><i
+                            class="bi bi-sort-up"></i>
+                        Balance Transfer History</a>
+                    <a class="dropdown-item" href="/lcopricedet"><i
+                            class="bi bi-wallet2"></i> View LCO Pricebook</a>
+                </div>
+            </div>
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Operator Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Full Name</label>
+                                    <input type="text" class="form-control" id="basicInput"
+                                        placeholder="Dhananjay Kumar Singh" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Date of Birth</label>
+                                    <input type="tel" class="form-control" id="basicInput" placeholder="1982-01-01"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Mobile No.</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="7011456264"
+                                        style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">Username</label>
+                                    <input type="email" class="form-control" id="basicInput" placeholder="Username Here"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Password</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Password"
+                                        style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">Status</label>
+                                    <input type="email" class="form-control" id="basicInput"
+                                        placeholder="Account Status" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Email</label>
+                                    <input type="email" class="form-control" id="basicInput"
+                                        placeholder="Operator Email" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Role</label>
+                                    <input type="text" class="form-control" id="basicInput"
+                                        placeholder="Operator Role" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="basicInput">Organization Name</label>
+                                    <input type="text" class="form-control" id="basicInput"
+                                        placeholder="NA" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Permanent Address</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Address</label>
+                                    <textarea name="address" id="addressbar" class="form-control"
+                                        style="background-color: white;"
+                                        placeholder="S/o Lallan Singh 34 Jamalpur Bailia Uttar Pardesh"
+                                        disabled></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="basicInput">Pincode</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="277208"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">District</label>
+                                    <input type="text" class="form-control" id="basicInput"
+                                        placeholder="Jamalpur Bailia" style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">State</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Uttar Pardesh"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Working Area (Office) Address</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Address</label>
+                                    <textarea name="address" id="addressbar" class="form-control"
+                                        style="background-color: white;"
+                                        placeholder="S/o Lallan Singh 34 Jamalpur Bailia Uttar Pardesh"
+                                        disabled></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="basicInput">Pincode</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="277208"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">District</label>
+                                    <input type="text" class="form-control" id="basicInput"
+                                        placeholder="Jamalpur Bailia" style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">State</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Uttar Pardesh"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">NAS Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">NAS Name</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="103.113.64.86"
+                                        style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">Deposit Amount</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="2500"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Payment Mode</label>
+                                    <input type="email" class="form-control" id="basicInput" placeholder="Cash/Cheque"
+                                        style="background-color: white;" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <label for="basicInput">Remaining Balance</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="900"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="basicInput">Associated Reseller</label>
+                                    <input type="text" class="form-control" id="basicInput" placeholder="Associated Reseller"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Document Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Document Name</label>
+                                    <input type="text" class="form-control" placeholder="AADHAR"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="basicInput">Document No.</label>
+                                    <input type="text" class="form-control" placeholder="956481235894"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="basicInput">Document Status</label>
+                                    <input type="text" class="form-control" placeholder="Verified"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+       {{> footer}}
+    </div>
+    </div>
+
+
+    <div class="modal fade text-left" id="password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change Password
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Old Password </label>
+                        <input type="text" placeholder="01542" class="form-control" readonly style="background-color: white;">
+                    </div>
+                    <div class="form-group">
+                        <label>New Password </label>
+                        <input type="password" placeholder="New Password" class="form-control">
+                    </div>
+                    <p style="color: red;">Note : This is LCO Login Portal Password.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade text-left" id="trbal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Transfer Balance
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label for="">LCO Current Balance</label>
+                        <input type="text" class="form-control" value="1000" id="curbal" name="curbal"
+                            readonly>
+                    </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label for="">Reseller Available Balance</label>
+                        <input type="text" class="form-control" value="Amount" id="amount" name="amount"
+                            readonly>
+                    </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-group">
+                        <label for="">Transfer Balance</label>
+                        <input type="text" class="form-control" value="" id="trbal" name="trbal">
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Payment Date</label>
+                                <input type="date" name="paymentdate" id="paymentdate" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="form-group">
+                        <label for="">Payment Mode</label>
+                        <select name="mode" id="mode" class="form-control" onchange="checkmode(this)">
+                            <option value="Cash" selected>Cash</option>
+                            <option value="Cheque">Cheque</option>
+                            <option value="NEFT">NEFT</option>
+                            <option value="DD">DD</option>
+                            <option value="Credit">Credit</option>
+                            <option value="Online Payment">Online Payment</option>
+                        </select>
+                    </div></div>
+                    </div>
+                    
+                    
+                    
+                    <div class="form-group col-md-12" id="docmodecheque" style="display: none;">
+                        <label id="doc"></label>
+                        <input type="text" class="form-control" id="chequeno" name="chequeno">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Add Balance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal fade text-left" id="revbal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Reverse Balance
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label for="">Current Balance</label>
+                        <input type="text" class="form-control" placeholder="1000" id="curbal" name="curbal"
+                            readonly>
+                    </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                        <label for="">Reverse Amount</label>
+                        <input type="text" class="form-control" placeholder="Reverse Amount" id="revamount" name="revamount"
+                        >
+                    </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Reverse Date</label>
+                                <input type="date" name="reversedate" id="reversedate" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="form-group col-md-12" id="docmodecheque" style="display: none;">
+                        <label id="doc"></label>
+                        <input type="text" class="form-control" id="chequeno" name="chequeno">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Add Balance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-left" id="description" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change Description
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Current Description </label>
+                        <input type="text" placeholder="Current Description" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>New Description</label>
+                        <input type="password" placeholder="New Description" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade text-left" id="docupload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Upload Document
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="document">Documents Type *</label>
+                        <select name="dtype" id="dtype" class="form-control" onchange="checkmode1(this)">
+                            <option value="" selected disabled>-Select-</option>
+                            <option value="Aadhar Card">Aadhar Card </option>
+                            <option value="Pan Card">Pan Card </option>
+                            <option value="Insurance Paper">Insurance Paper</option>
+                            <option value="GSTIN">GSTIN</option>
+                            <option value="Authorised Signatory Aadhar Card">Authorised Signatory Aadhar Card </option>
+                            <option value="Authorised Signatory Pan Card">Authorised Signatory Pan Card </option>
+                            <option value="Authorised Signatory Photo">Authorised Signatory Photo </option>
+                            <option value="Authorised Signatory Letter">Authorised Signatory Letter </option>
+                            <option value="Memorandum of Association">Memorandum of Association (MOA) </option>
+                            <option value="Article of Association">Article of Association (AOA)</option>
+                            <option value="Company Incorporation Certificate">Company Incorporation Certificate</option>
+                            <option value="Rent Agreement">Rent Agreement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="docid" style="display: none;">
+                        <label id="doc1"></label>
+                        <input type="text" placeholder="ID number" id="idnumber" name="idnumber" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="document">Upload Document</label>
+                        <input type="file" name="uploads" class="form-control" id="uploads">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+{{> cdnjs}}
+</body>
+
+</html>

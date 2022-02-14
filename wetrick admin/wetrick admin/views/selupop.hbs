@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Upcoming Renewals</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                                    <p class="text-center font-bold">Operator Information</p>
+                                    <div class="form-group">
+                                        <label> Reseller Name </label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <select name="opname" class="form-control" id="opname" required>
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value="">351</option>
+
+
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label> Reseller Email </label>
+                                        <input type="text" class="form-control" id="opmail" placeholder="demo@gmail.com" disabled style="background-color: white;">
+                                    </div>
+                                          
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                        <div class="form-group">
+                                        <label> Zone </label>
+                                        <input type="text" class="form-control" id="opzone" placeholder="Nangloi" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> Wallet Balance </label>
+                                        <input type="text" class="form-control" id="walbal" placeholder="10000" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> Status </label>
+                                        <input type="text" class="form-control" id="status" placeholder="10000" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> No. Associated LCO </label>
+                                        <input type="text" class="form-control" id="asslco" placeholder="10000" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <label> Total No. of Upcoming Renewals Today </label>
+                                        <input type="text" class="form-control" id="upren" placeholder="0" disabled style="background-color: white;">
+                                    </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <input type="checkbox" id="lcosel" class="lcosel"> <Label><p class="font-bold"> Click Here! If You Want To Recharge Customer For Associated LCO</p></Label>
+
+                                    </div>
+                                    <div class="lcodetails">
+                                    <p class="text-center font-bold">Select Your LCO Details Here</p>
+                                     <div class="form-group">
+                                        <label> LCO Name </label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <select name="lconame" class="form-control" id="lconame">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label> LCO Email </label>
+                                        <input type="text" class="form-control" id="lcomail" placeholder="demo@gmail.com" disabled style="background-color: white;">
+                                    </div>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                        <div class="form-group">
+                                        <label> Zone </label>
+                                        <input type="text" class="form-control" id="opzone" placeholder="Nangloi" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> Wallet Balance </label>
+                                        <input type="text" class="form-control" id="walbal" placeholder="10000" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> Associated Reseller Name </label>
+                                        <input type="text" class="form-control" id="assresname" placeholder="zafar" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <label> Associated Reseller Email </label>
+                                        <input type="text" class="form-control" id="assresmail" placeholder="resemail@gmail.com" disabled style="background-color: white;">
+                                    </div>
+                                        </div>
+                                        <div class="form-group">
+                                        <label> Total No. of Upcoming Renewals Today </label>
+                                        <input type="text" class="form-control" id="upren" placeholder="0" disabled style="background-color: white;">
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 mb-3">
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-danger previous" id="prevtab" style="display:none;">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-success next" id="nexttab">Next</button>
+                                    </div>
+                                </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+        {{> footer}}
+    </div>
+{{> cdnjs}}
+
+<script src="js/pages/selupop.js"></script>
+</body>
+
+</html>

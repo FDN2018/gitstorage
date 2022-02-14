@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <a class="btn btn-dark mb-2" href="/reports"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+  <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+  <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+</svg> Back</a>
+<div class="container-fluid m-0 p-0">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+            <div class="col-md-3">
+                <p class="fw-bold m-0 p-0">Search in</p>
+                <select id="cols" class="form-control" onchange=colVal(this.value)>
+                    <option value="username">Username</option>
+                    <option value="fullname">Full Name</option>
+                    <option value="phone">Mobile No.</option>
+                    <option value="plan">Plan Name</option>
+                    <option value="plancost">Plan Cost</option>
+                    <option value="igst">IGST</option>
+                    <option value="cgst">CGST</option>
+                    <option value="sgst">SGST</option>            
+                    <option value="totamt">Total Amount</option>
+                    <option value="agr">AGR</option>                
+                    <option value="tottax">Total Tax</option>
+                    <option value="address">Address</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <p class="fw-bold m-0 p-0">Condition</p>
+                <select id="cond" class="form-control" style="display: block;" onchange=condVal(this.value)>
+                    <option value="any">Anywhere</option>
+                    <option value="startwith">Starts With</option>
+                    <option value="endwith">Ends With</option>
+                    <option value="exactly">Exactly</option>
+                    <option value="notlike">Not Like</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div class="form-row">
+                    <div class="col" id="ip1" style="display: block;">
+                        <p class="fw-bold m-0 p-0">Enter Value</p>
+                        <input type="text" class="column_filter form-control" id="testinp" style="display: block;" onchange=dataFetch()>
+                    </div>
+                    <div class="col" id="ip2" style="display: none;">
+                        <p class="fw-bold m-0 p-0" id="date1"></p>
+                        <input type="date" class="column_filter form-control" id="testdateinp1" style="display: none;">
+                    </div>
+                    <div class="col" id="ip3" style="display: none;">
+                        <p class="fw-bold m-0 p-0" id="date2"></p>
+                        <input type="date" class="column_filter form-control" id="testdateinp2" style="display: none;">
+                    </div>
+                </div>                    
+            </div>
+            <div class="col-md-2">
+                <p class="fw-bold m-0 p-0">View Report</p>
+                <input type="button" class="btn btn-primary btn-block datafetch" value="Search" id="seardata" style="display: block;">
+                <input type="button" class="btn btn-primary btn-block fildatafetch" value="Search" id="searfildata" style="display: none;">
+                <input type="button" class="btn btn-primary btn-block nofildatafetch" value="Search" id="searnofildata" style="display: none;" onclick=noFilter()>
+                <input type="button" class="btn btn-primary btn-block datefetch" value="Search" id="seardate" style="display: none;">
+            </div>
+            <div class="col-md-1">
+                <p class="fw-bold m-0 p-0">Clear</p>
+                <button class="btn btn-danger" onclick=reload()><i class="bi bi-trash-fill"></i></button>
+            </div>
+        </div>
+        </div>
+    </div>    
+</div>
+            <section class="section">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">AGR Post GST</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="myTable" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Full Name</th>
+                                            <th>Mobile No.</th>
+                                            <th>Plan Name</th>
+                                            <th>Plan Cost</th>
+                                            <th>IGST</th>
+                                            <th>CGST</th>
+                                            <th>SGST</th>
+                                            <th>Total Amount</th>
+                                            <th>AGR</th>
+                                            <th>Total Tax</th>
+                                            <th>Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="/">Abhishek</a></td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>      
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>          
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                  
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>                                    
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+{{> footer}}
+</div>
+{{> cdnjs}}
+<script src="js/pages/agr.js"></script>
+</body>
+</html>

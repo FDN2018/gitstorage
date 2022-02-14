@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+<body>
+    {{> sidebar}}
+
+    <div id="main">
+        {{> role}}
+        <div id="main-content">
+<div class="container-fluid m-0 p-0">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+            <div class="col-md-4">
+                <p class="fw-bold m-0 p-0">Search in</p>
+                <select name="month" id="Month_list" class="form-control" onchange=colVal(this.value)>
+                    
+                </select>
+                
+            </div>
+            <div class="col-md-2">
+                <p class="fw-bold m-0 p-0">View Report</p>
+                <input type="button" class="btn btn-primary btn-block datafetch" value="Search" id="seardata" style="display: block;">
+                {{!-- <input type="button" class="btn btn-primary btn-block fildatafetch" value="Search" id="searfildata" style="display: none;">
+                <input type="button" class="btn btn-primary btn-block nofildatafetch" value="Search" id="searnofildata" style="display: none;" onclick=noFilter()>
+                <input type="button" class="btn btn-primary btn-block datefetch" value="Search" id="seardate" style="display: none;"> --}}
+            </div>
+            <div class="col-md-1">
+                <p class="fw-bold m-0 p-0">Clear</p>
+                <button class="btn btn-danger" onclick=reload()><i class="bi bi-trash-fill"></i></button>
+            </div>
+        </div>
+        </div>
+    </div>    
+</div>
+            <section class="section">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">Concurrent Session</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            
+                            <div class="table-responsive">
+                                <table class="table" id="session" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Start Time</th>
+                                            <th>Stop Time</th>
+                                            <th>Usage-Volume</th>
+                                            <th>Usage-Time</th>
+                                            <th>IP Address</th>
+                                            <th>NAS IP</th>
+                                            <th>Terminate Cause</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2022-01-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-12-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-10-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-08-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-09-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-08-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021-02-20 21:50:45</td>
+                                            <td>2022-01-21 06:02:20</td>
+                                            <td>772 MB</td>
+                                            <td>8h</td>
+                                            <td>172.30.30.14</td>
+                                            <td>103.113.64.86</td>
+                                            <td>User-Request</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+{{> footer}}
+    </div>
+
+{{> cdnjs}}
+<script type="text/javascript">
+var monthName = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+var d = new Date();
+var optionText,optionValue;
+d.setDate(1);
+for (i=0; i<=11; i++) {
+    optionText=monthName[d.getMonth()] + '-' + d.getFullYear();
+    optionValue=d.getFullYear() + '-' + [('0' + (d.getMonth()+1)).slice(-2)];
+    d.setMonth(d.getMonth() - 1);
+    $('#Month_list').append(`<option value="${optionValue}">${optionText}</option>`);
+}
+
+    function colVal(val){
+    var colname = document.getElementById("Month_list").value; 
+    return [colname];
+    }
+
+var table=$('#session').DataTable();
+$('#seardata').on('click', function () {
+            $('#session').DataTable().column(0).every(function () {
+                var column1 = this;
+                colVal();
+                var selCol=colVal()[0];
+                if (column1.search() !== (selCol)) {
+                    column1.search(selCol).draw();
+                }
+            });
+        });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<html>
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+    {{> sidebar}}
+    <div id="main">
+        {{> role}}
+        <div id="main-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Subscriber Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a class="text-decoration-none text-black" href="/suscusrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Suspended
+                                        Customer Report</button></a>
+                                        <a class="text-decoration-none text-black" href="/accrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Account Profile Wise Report</button></a>
+                                <a class="text-decoration-none text-black" href="/inacusrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Inactive
+                                        Customer Report</button></a>
+                                        <a class="text-decoration-none text-black" href="/acuserrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Active User Report</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">System Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a class="text-decoration-none text-black" href="/userlog"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">User
+                                        Access Log</button></a>
+                                <button type="button"
+                                    class="list-group-item list-group-item-action text-center">Bandwidth
+                                    Utilization Graph</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Franchisee Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a class="text-decoration-none text-black" href="/lcobaltra"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">LCO
+                                        Balance Transfer History</button></a>
+                                <a class="text-decoration-none text-black" href="/lcotrahis"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">LCO
+                                        Transaction History</button></a>
+                                <a class="text-decoration-none text-black" href="/restrabal"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Reseller
+                                        Transfer Balance Report</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">MIS Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                {{!-- <a class="text-decoration-none text-black" href="/upremon"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Upcoming
+                                        Renewal By Months</button></a> --}}
+                                <a class="text-decoration-none text-black" href="/cusosbal"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Customer
+                                        Outstanding Balance Report</button></a>
+                                <a class="text-decoration-none text-black" href="/dataus"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Data
+                                        Usage Report</button></a>
+                                {{!-- <a class="text-decoration-none text-black" href="/cusuphis"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Customer
+                                        Update History</button></a>
+                                <button type="button" class="list-group-item list-group-item-action text-center">Sales
+                                    Executive Performance</button> --}}
+                                {{!-- <a class="text-decoration-none text-black" href="/agr"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">AGR
+                                        Post
+                                        GST</button></a> --}}
+                                <a class="text-decoration-none text-black" href="/upreday"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Upcoming
+                                        Renewal By Days</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Revenue Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                {{!-- <a class="text-decoration-none text-black" href="/renplan"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Renew
+                                        Plan Report</button></a> --}}
+                                {{!-- <a class="text-decoration-none text-black" href="/otfran"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Online
+                                        Transaction - Franchisee</button></a>
+                                <a class="text-decoration-none text-black" href="/otsubs"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Online
+                                        Transaction - Subscribers</button></a> --}}
+                                <a class="text-decoration-none text-black" href="/regplan"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">New
+                                        Registration Plan Report</button></a>
+                                <a class="text-decoration-none text-black" href="/purnew"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Recent
+                                        Purchase/Renew Report</button></a>
+                                <a class="text-decoration-none text-black" href="/tranrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Transaction
+                                        Report</button></a>
+                                <a class="text-decoration-none text-black" href="/payrep"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Payment
+                                        Report</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Customer Care Reports</h4>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-body">
+                                <a class="text-decoration-none text-black" href="/casedet"><button type="button"
+                                        class="list-group-item list-group-item-action text-center">Case
+                                        Details Report</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{> footer}}
+
+    </div>
+
+{{> cdnjs}}
+</body>
+
+</html>

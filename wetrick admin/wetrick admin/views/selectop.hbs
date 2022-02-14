@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+    {{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Choose Operator Details</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                                    <div class="form-group">
+                                        <label> Operator Name </label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <select name="opname" class="form-control" id="opname">
+                                            <option value="" selected disabled>-Select-</option>
+                                            <option value=""></option>
+                                        </select>
+                                        <span id="planerr" style="color:red"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label> Operator Email </label>
+                                        <span style="color:red"><strong>*</strong></span>
+                                        <input type="text" class="form-control" id="opmail" placeholder="demo@gmail.com" disabled style="background-color: white;">
+                                        <span id="planerr" style="color:red"></span>
+                                    </div>
+                                <div class="row mt-3 mb-3">
+                                    <div class="col-md-6">
+                                    <a class="btn btn-block btn-danger previous" id="prevtab" style="display:none;">Previous</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <a class="btn btn-block btn-success next" href="/renewal" id="nexttab">View Renewals</a>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+    {{>  footer}}
+    </div>
+{{> cdnjs}}
+</body>
+
+</html>

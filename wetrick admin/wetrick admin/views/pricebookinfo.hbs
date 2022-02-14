@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+            <div class="btn-group dropdown me-1 mb-1">
+                <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                    <span class="sr-only"><i class="bi bi-sliders"></i> Control Panel </span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#pricestatus">
+                    <i class="bi bi-pencil"></i> Change Pricebook Status</a>
+                    <a class="dropdown-item" href="/editpricebook"><i class="bi bi-tag-fill"></i> Edit Pricebook</a>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pricename"><i class="bi bi-pencil"></i>
+                        Change Pricebook Name</a>
+                </div>
+            </div>
+            <section class="section">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Pricebook Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Pricebook Name</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Plan1" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Pricebook For</label>
+                                    <input type="text" class="form-control" placeholder="Abhishek"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Pricebook Status</label>
+                                    <input type="text" class="form-control" placeholder="Inactive"
+                                        style="background-color: white;" disabled>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>From Date</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="22-Dec-2021" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>To Date</label>
+                                    <input type="text" class="form-control" placeholder="22-Dec-2022"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Pricebook Description" style="background-color: white;" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Reseller Email</label>
+                                    <input type="text" class="form-control" placeholder="example@reselleremail.com"
+                                        style="background-color: white;" disabled>
+                                </div>
+                            </div>    
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>LCO Email</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="example@lcoemail.com" style="background-color: white;" disabled>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Plan Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-responsive mt-2" id="planbook">
+                            <thead>
+                                <tr>
+                                    <th>Plan Name</th>
+                                    <th>Base MRP</th>
+                                    <th>MRP</th>
+                                    <th>Retailer Price</th>
+                                    <th>Offer Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                </tr>
+                                <tr>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                </tr>
+                                <tr>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                </tr>
+                                <tr>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                    <td>Value from Database</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+    <div class="footer clearfix mb-0 text-muted">
+    <strong>Copyright &copy; <a href="" class="text-decoration-none">weTRICK</a>.</strong> | All rights reserved.
+    </div>
+    </footer>
+    </div>
+    </div>
+    </div>
+
+
+    <div class="modal fade text-left" id="pricestatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change Pricebook Status
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Current Status</label>
+                        <input type="text" placeholder="Active" class="form-control" readonly style="background-color: white;">
+                    </div>
+                    <div class="form-group">
+                        <label>Change Status</label>
+                        <select name="pricestat" class="form-control" required>
+                            <option value="" selected disabled>Select Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <input type="submit" class="btn btn-primary ml-1" value="Change Status">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-left" id="pricename" tabindex="-1" role="dialog" aria-labelledby="myModalLabel160"
+        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h5 class="modal-title white" id="myModalLabel160">
+                        Change Pricebook Name
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <i data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Pricebook Name</label>
+                        <input type="text" placeholder="Abhishek" class="form-control" readonly style="background-color: white;">
+                    </div>
+                    <div class="form-group">
+                        <label>New Pricebook Name</label>
+                        <input type="text" placeholder="Enter New Pricebook Name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <input type="submit" class="btn btn-primary ml-1" value="Change Name" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{> cdnjs}}
+    <script src="js/pages/pricebookinfo.js">
+    </script>
+
+</body>
+
+</html>

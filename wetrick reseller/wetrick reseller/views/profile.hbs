@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+  <div id="main">
+    {{> role}}
+    <div id="main-content">
+      <div class="page-heading">
+        <div class="page-title">
+          <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-first">
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="img/user2-160x160.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-6">
+                  <h3>My Profile</h3>
+                  <p class="text-subtitle text-muted">Click Here to change or remove profile picture</p>
+                  <div class="buttons">
+                    <a href="#" class="btn btn-outline-success">Update Profile Picture</a>
+                    <a href="#" class="btn btn-danger">Remove Profile Picture</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-last">
+              <div class="card">
+                <div class="card-header">
+                  <h4 class="card-title">Profile Information</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Dhananjay Kumar Singh"
+                          disabled>
+                      </div>
+
+                      <div class="form-group position-relative has-icon-right">
+                        <label>Password</label>
+                        <input type="text" class="form-control" placeholder="Password">
+                        <div class="form-control-icon mt-2"><a href="">
+                            <i class="bi bi-unlock"></i>
+                          </a>
+                        </div>
+                      </div>
+                      {{!-- <input type="text" class="form-control" placeholder="7011456264" disabled>
+                      --}}
+
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label>Status</label>
+                        <input type="text" class="form-control is-valid" placeholder="Active">
+                        <button type="button" class="btn btn-outline-primary rounded-pill float-start float-lg-end mt-4"
+                          data-bs-toggle="modal" data-bs-target="#inlineForm">Change Password </button>
+                        {{!-- <a href="#"
+                          class="btn btn-outline-primary rounded-pill float-start float-lg-end mt-4">Change
+                          Password</a> --}}
+                      </div>
+                      <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog"
+                        aria-labelledby="myModalLabel33" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title" id="myModalLabel33">Change Password</h4>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <i data-feather="x"></i>
+                              </button>
+                            </div>
+                            <form action="#">
+                              <div class="modal-body">
+                                <label>Current Password:</label>
+                                <div class="form-group">
+                                  <input type="text" placeholder="Current Password" class="form-control">
+                                </div>
+                                <label>New Password: </label>
+                                <div class="form-group">
+                                  <input type="password" placeholder="New Password" class="form-control">
+                                </div>
+                                <label>Confirm Password: </label>
+                                <div class="form-group">
+                                  <input type="password" placeholder="Confirm Password" class="form-control">
+                                </div>                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                  <i class="bx bx-x"></i>
+                                  <span>Close</span>
+                                </button>
+                                <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                  <i class="bx bx-check"></i>
+                                  <span>Change Password</span>
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Personal Details</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" placeholder="Dhananjay Kumar Singh"
+                    style="background-color: white;" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label>Mobile No.</label>
+                  <input type="tel" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Date of Birth</label>
+                  <input type="text" class="form-control" placeholder="1982-01-01"
+                    style="background-color: white;" disabled>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Organisation Details</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Legal/Trade Name</label>
+                  <input type="text" class="form-control" placeholder="Dhananjay Kumar Singh"
+                    style="background-color: white;" disabled>
+                </div>
+
+                <div class="form-group">
+                  <label>Address</label>
+                  <textarea name="address" id="addressbar" class="form-control" style="background-color: white;"
+                    placeholder="S/o Lallan Singh 34 Jamalpur Bailia Uttar Pardesh" disabled></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Pin Code</label>
+                  <input type="text" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+                <div class="form-group">
+                  <label>Website</label>
+                  <input type="text" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" class="form-control" placeholder="1982-01-01"
+                    style="background-color: white;" disabled>
+                </div>
+                <div class="form-group">
+                  <label>Country</label>
+                  <input type="text" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+                <div class="form-group">
+
+                  <div class="form-group position-relative has-icon-right">
+                    <label>GSTIN</label>
+                    <input type="text" class="form-control" placeholder="GSTIN No.">
+                    <div class="form-control-icon mt-2"><a href="">
+                        <i class="bi bi-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" placeholder="7011456264"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+              <div class="form-group">
+                  <label>Associated Reseller</label>
+                  <input type="text" class="form-control" placeholder="Amit Singh"
+                    style="background-color: white;" disabled>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Address Information</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Address</label>
+                  <textarea name="address" id="addressbar" class="form-control" style="background-color: white;"
+                    placeholder="S/o Lallan Singh 34 Jamalpur Bailia Uttar Pardesh" disabled></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Pincode</label>
+                  <input type="text" class="form-control" placeholder="277208"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>District</label>
+                  <input type="text" class="form-control" placeholder="Jamalpur Bailia"
+                    style="background-color: white;" disabled>
+                </div>
+                <div class="form-group">
+                  <label>State</label>
+                  <input type="text" class="form-control" placeholder="Uttar Pardesh"
+                    style="background-color: white;" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Document Information</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Document Type</label>
+                  <input type="text" class="form-control" placeholder="Aadhar" style="background-color: white;"
+                    disabled>
+                </div>
+
+                <div class="form-group">
+                  <label>Document No.</label>
+                  <input type="text" class="form-control" placeholder="341171071465" style="background-color: white;"
+                    disabled>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Document Status</label>
+                  <input type="text" class="form-control" placeholder="Verified" style="background-color: white;"
+                    disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+{{> footer}}
+  </div>
+  </div>
+
+{{> cdnjs}}
+
+</body>
+
+</html>

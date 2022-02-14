@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{{> headcdn}}
+</head>
+
+<body>
+{{> sidebar}}
+
+    <div id="main">
+{{> role}}
+        <div id="main-content">
+<section class="content">
+
+         <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Add NAS</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" name="nasadd" method="post">
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                            <div class="form-group">
+                             <label>NAS IP</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="text" class="form-control" id="nasip" name="nasip" placeholder="NAS IP" required pattern="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)">
+                            </div> </div>
+
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="type">Location</label> <span style="color:red"><strong>*</strong></span>
+                              <input type="text" class="form-control" placeholder="Location" name="location" id="location" required="">
+                            </div>
+                            </div></div>
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="sac">Secret</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="password" class="form-control" placeholder="Secret" id="secret" name="secret" required>
+                            </div>  
+                            </div>
+                             <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="name">API Username</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="text" class="form-control" placeholder="Enter Router Username" required="" id="username" name="username">
+                            </div></div>
+                            </div>
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="type">API Password</label> <span style="color:red"><strong>*</strong></span>
+                             <input type="password" class="form-control" placeholder="Enter Router Password" required="" id="apipass" name="apipass">
+                            </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                             <label for="des">Description</label>
+                             <input type="text" class="form-control" placeholder="Enter Description">
+                            </div></div>
+
+                            <div class="row">
+                            <div class="col-md-6">
+                            <div class="form-group">
+                             <label for="name">Type</label>
+                             <input type="text" class="form-control" placeholder="Mikrotik" readonly style="background-color: white;">             
+
+                            </div></div>
+                            
+                            <div class="col-md-6">
+                            <div class="form-group">
+                            <label for="name">Ports</label>
+                             <input type="text" class="form-control" placeholder="8728" readonly style="background-color: white;">  
+                            </div></div></div>
+                               <div class="row mt-3 mb-3">
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-danger previous" id="prevtab" style="display:none;">Previous</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <button class="btn btn-block btn-success next" id="nexttab" onclick=validateForm()>Add NAS</button>
+                                    </div>
+                                </div>
+                </div>
+                <!-- /.card-body -->
+
+              </form>
+            </div>
+            
+       
+
+    </section>
+</div>
+{{> footer}}
+    </div>
+{{> cdnjs}}
+<script src="js/pages/nas.js"></script>
+
+</body>
+
+</html>

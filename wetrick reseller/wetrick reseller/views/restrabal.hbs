@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>weTrick | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/portal.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+</head>
+
+<body>
+    <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-between">
+                    <div class="logo">
+                        <a href="/home" class="text-decoration-none">weTRICK</a>
+                    </div>
+                    <div class="toggler">
+                        <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+
+                    <li class="sidebar-item">
+                        <a href="/home" class='sidebar-link'>
+                            <i class="bi bi-house-fill"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="/customer" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Customers</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item">
+                                <a href="/allcustomer">All Customers</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/indcustomer">View Individual Customers</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/corcustomer">View Corporate Customers</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-person-plus-fill"></i>
+                            <span>Create Customers</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="/individual">Individual Customer</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/corporate">Corporate Customer</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-grid-1x2-fill"></i>
+                            <span>Quick Operation</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="/changepassword">Change Password</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/changeplan">Change Plan</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="/changestatic">Change Static Ip</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/graph">View User Graph</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-person-lines-fill"></i>
+                            <span>Operator</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="/lco">New LCO/Operator</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/viewoperator">View Operator</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="form-element-radio.html">Operator Configuration</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-cash-stack"></i>
+                            <span>Bulk Recharge</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="/renewal">Upcoming Renewal</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/expired">Pending/Expired Renewal</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-layers-fill"></i>
+                            <span>Plans</span>
+                        </a>
+                        <ul class="submenu">
+                            <li class="submenu-item ">
+                                <a href="/plan">Create Plan</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/planapp">Plan Approval</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="/viewplan">View Plan</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-journal-album"></i>
+                            <span>Pricebook</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item ">
+                                <a href="/price">Create Pricebook</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/viewprice">View Pricebook</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="/session" class='sidebar-link'>
+                            <i class="bi bi-stopwatch-fill"></i>
+                            <span>Concurrent Session</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="/viewc" class='sidebar-link'>
+                            <i class="bi bi-flag-fill"></i>
+                            <span>Complaints</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item ">
+                        <a href="/viewnas" class='sidebar-link'>
+                            <i class="bi bi-cpu"></i>
+                            <span>System</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  has-sub">
+                        <a href="#" class='sidebar-link'>
+                            <i class="bi bi-person-circle"></i>
+                            <span>Employee</span>
+                        </a>
+                        <ul class="submenu ">
+                            <li class="submenu-item">
+                                <a href="/addemp">Add Employee</a>
+                            </li>
+                            <li class="submenu-item ">
+                                <a href="/viewemp">View Employee</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="/reports" class='sidebar-link'>
+                            <i class="bi bi-file-text-fill"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="/billzone" class='sidebar-link'>
+                            <i class="bi bi-receipt"></i>
+                            <span>Billing Zone</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="/broadcast" class='sidebar-link'>
+                            <i class="bi bi-broadcast-pin"></i>
+                            <span>Broadcast</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+    </div>
+
+    <div id="main">
+        <header class='mb-3'>
+            <nav class="navbar navbar-expand navbar-light ">
+                <div class="container-fluid">
+                    <a href="#" class="burger-btn d-block">
+                        <i class="bi bi-justify fs-3"></i>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                            <div class="dropdown">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
+                                    class="text-decoration-none">
+                                    <div class="user-menu d-flex">
+                                        <div class="user-name text-end me-3">
+                                            <h6 class="mb-0 text-gray-600">Rocky Bhai</h6>
+                                            <p class="mb-0 text-sm text-gray-600">Admin</p>
+                                        </div>
+                                        <div class="user-img d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="img/user2-160x160.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <h6 class="dropdown-header">Hello, Rocky!</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/profile"><i
+                                                class="icon-mid bi bi-person me-2"></i> My
+                                            Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                            Settings</a></li>
+                                    <li><a class="dropdown-item" href="/wallet"><i
+                                                class="icon-mid bi bi-wallet me-2"></i>
+                                            Wallet Activity</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/logout"><i
+                                                class="icon-mid bi bi-box-arrow-left me-2"></i>
+                                            Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    <div id="main-content">
+            <a class="btn btn-dark mb-2" href="/reports"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-backspace" viewBox="0 0 16 16">
+  <path d="M5.83 5.146a.5.5 0 0 0 0 .708L7.975 8l-2.147 2.146a.5.5 0 0 0 .707.708l2.147-2.147 2.146 2.147a.5.5 0 0 0 .707-.708L9.39 8l2.146-2.146a.5.5 0 0 0-.707-.708L8.683 7.293 6.536 5.146a.5.5 0 0 0-.707 0z"/>
+  <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
+</svg> Back</a>
+<div class="container-fluid m-0 p-0">
+<div class="card">
+<div class="card-header">
+            <div class="row">
+                <div class="col-md-3">
+                    <p class="fw-bold m-0 p-0">Search in</p>
+                    <select id="cols" class="form-control" onchange=colVal(this.value)>
+                    <option value="reseller">Reseller Name</option>
+                    <option value="trbal">Transfer Balance</option>
+                    <option value="opbal">Opening Balance</option>
+                    <option value="clbal">Closing Balance</option>
+                    <option value="type">Type</option>
+                    <option value="date">Date</option>
+                    <option value="trby">Transfer By</option>
+                    <option value="mode">Mode</option>
+                </select>       
+            </div>
+            <div class="col-md-3">
+                <p class="fw-bold m-0 p-0">Condition</p>
+                <select id="cond" class="form-control" style="display: block;" onchange=condVal(this.value)>
+                    <option value="any">Anywhere</option>
+                    <option value="startwith">Starts With</option>
+                    <option value="endwith">Ends With</option>
+                    <option value="exactly">Exactly</option>
+                    <option value="notlike">Not Like</option>
+                </select>
+                <select id="condDate" class="form-control" style="display: none;" onchange=condDateVal(this.value)>
+                    <option value="equal">=</option>
+                    <option value="lessequal">&lt;=</option>
+                    <option value="gtequal">&gt;=</option>
+                    {{!-- <option value="notequal">!=</option> --}}
+                    <option value="between">BETWEEN</option>
+                    <option value="thisweek">This Week</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col" id="ip1" style="display: block;">
+                        <p class="fw-bold m-0 p-0">Enter Value</p>
+                        <input type="text" class="column_filter form-control" id="testinp" style="display: block;" onchange=dataFetch()>
+                    </div>
+                    <div class="col" id="ip2" style="display: none;">
+                        <p class="fw-bold m-0 p-0" id="date1">Select Date</p>
+                        <input type="date" class="column_filter form-control" id="testdateinp1" style="display: none;">
+                    </div>
+                    <div class="col" id="ip3" style="display: none;">
+                        <p class="fw-bold m-0 p-0" id="date2"></p>
+                        <input type="date" class="column_filter form-control" id="testdateinp2" style="display: none;">
+                    </div>
+                </div>                    
+            </div>
+            <div class="col-md-2">
+                <p class="fw-bold m-0 p-0">View Report</p>
+                <input type="button" class="btn btn-primary btn-block datafetch" value="Search" id="seardata" style="display: block;">
+                <input type="button" class="btn btn-primary btn-block fildatafetch" value="Search" id="searfildata" style="display: none;">
+                <input type="button" class="btn btn-primary btn-block nofildatafetch" value="Search" id="searnofildata" style="display: none;" onclick=noFilter()>
+                <input type="button" class="btn btn-primary btn-block datefetch" value="Search" id="seardate" style="display: none;">
+            </div>
+            <div class="col-md-1">
+                <p class="fw-bold m-0 p-0">Clear</p>
+                <button class="btn btn-danger" onclick=reload()><i class="bi bi-trash-fill"></i></button>
+            </div>
+        </div>
+        </div>
+            </div>
+</div>
+            <section class="section">
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">Reseller Transfer Balance Report</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="myTable" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Reseller Name</th>
+                                            <th>Transfer Balance</th>
+                                            <th>Opening Balance</th>
+                                            <th>Closing Balance</th>
+                                            <th>Type</th>
+                                            <th>Date</th>
+                                            <th>Transfer By</th>
+                                            <th>Mode</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="/">Abhishek</a></td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>fswfs</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td> 
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                           
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>   
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                         
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>    
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                        
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>      
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>     
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                       
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>       
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                     
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>     
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                       
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>          
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                  
+                                        </tr>
+                                        <tr>
+                                            <td>Abhishek</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>
+                                            <td>1213545</td>
+                                            <td>dsafdf</td>
+                                            <td>fswfs</td>        
+                                            <td>1213545</td>
+                                            <td>fswfs</td>                                    
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</div>
+        <footer>
+            <div class="footer clearfix mb-0 text-muted">
+                <strong>Copyright &copy; <a href="" class="text-decoration-none">weTRICK</a>.</strong> | All rights
+                reserved.
+            </div>
+        </footer>
+    </div>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"crossorigin="anonymous"></script>
+<script src="js/side.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("select#cols").change(function(){
+        var colName = $(this).children("option:selected").val();
+        var cond=document.getElementById("cond");
+        var seardata=document.getElementById("seardata");
+        var searfildata=document.getElementById("searfildata");
+        var searnofildata=document.getElementById("searnofildata");
+        var seardate=document.getElementById("seardate");
+        var condDate=document.getElementById("condDate");
+        var ip1= document.getElementById("ip1");
+        var ip2= document.getElementById("ip2");
+        var ip3= document.getElementById("ip3");
+        var inpFi1= document.getElementById("testinp");
+        var inpFi2= document.getElementById("testdateinp1");
+        var inpFi3= document.getElementById("testdateinp2");
+    if (colName=="reseller"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="opbal"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="mode"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="date"){
+        condDate.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        cond.style.display="none";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="none";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="none";
+        document.getElementById('date1').innerHTML="Select Date";
+        
+    }
+    else if (colName=="type"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="trbal"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="trby"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    else if (colName=="clbal"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+        cond.value="any";
+    }
+    });
+});
+
+$(document).ready(function(){
+    $("select#cond").change(function(){
+        var condName = $(this).children("option:selected").val();
+        var cond=document.getElementById("cond");
+        var condDate=document.getElementById("condDate");
+        var seardata=document.getElementById("seardata");
+        var searfildata=document.getElementById("searfildata");
+        var searnofildata=document.getElementById("searnofildata");
+        var seardate=document.getElementById("seardate");
+        var ip1= document.getElementById("ip1");
+        var ip2= document.getElementById("ip2");
+        var ip3= document.getElementById("ip3");
+        var inpFi1= document.getElementById("testinp");
+        var inpFi2= document.getElementById("testdateinp1");
+        var inpFi3= document.getElementById("testdateinp2");
+    if (condName==="any"){
+        cond.style.display="block";
+        seardata.style.display="block";
+        seardate.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+    }
+    else if (condName=="startwith"){
+        cond.style.display="block";
+        seardata.style.display="none";
+        searfildata.style.display="block";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+    }
+    else if (condName=="endwith"){
+        cond.style.display="block";
+        seardata.style.display="none";
+        searfildata.style.display="block";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+    }
+    else if (condName=="exactly"){
+        cond.style.display="block";
+        seardata.style.display="none";
+        searfildata.style.display="block";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="none";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+    }
+    else if (condName=="notlike"){
+        condDate.style.display="none";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="block";
+        seardate.style.display="none";
+        cond.style.display="block";
+        ip1.style.display="block";
+        ip2.style.display="none";
+        ip3.style.display="none";
+        inpFi1.style.display="block";
+        inpFi2.style.display="none";
+        inpFi3.style.display="none";
+    }
+    });
+});
+
+$(document).ready(function(){
+    $("select#condDate").change(function(){
+        var condDateName = $(this).children("option:selected").val();
+        var cond=document.getElementById("cond");
+        var condDate=document.getElementById("condDate");
+        var seardata=document.getElementById("seardata");
+        var searfildata=document.getElementById("searfildata");
+        var searnofildata=document.getElementById("searnofildata");
+        var seardate=document.getElementById("seardate");
+        var inpFi1= document.getElementById("testinp");
+        var inpFi2= document.getElementById("testdateinp1");
+        var inpFi3= document.getElementById("testdateinp2");
+    if (condDateName==="equal"){
+        cond.style.display="none";
+        seardata.style.display="block";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="none";
+        condDate.style.display="block";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="none";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="none";
+        document.getElementById('date1').innerHTML="Select Date";
+        inpFi2.value='';
+        inpFi3.value='';
+    }
+    else if (condDateName=="lessequal"){
+        cond.style.display="none";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="block";
+        condDate.style.display="block";
+        ip1.style.display="none";
+        ip2.style.display="none";
+        ip3.style.display="block";
+        inpFi1.style.display="none";
+        inpFi2.style.display="none";
+        inpFi3.style.display="block";
+        document.getElementById('date2').innerHTML="Select Date";
+        inpFi2.value='';
+        inpFi3.value='';
+    }
+    else if (condDateName=="gtequal"){
+        cond.style.display="none";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="block";
+        condDate.style.display="block";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="none";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="none";
+        document.getElementById('date1').innerHTML="Select Date";
+        inpFi2.value='';
+        inpFi3.value='';
+    }
+    else if (condDateName=="notequal"){
+        cond.style.display="none";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="block";
+        condDate.style.display="block";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="none";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="none";
+        document.getElementById('date1').innerHTML="Select Date";
+        inpFi2.value='';
+        inpFi3.value='';
+    }
+    else if (condDateName=="between"){
+        condDate.style.display="block";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="block";
+        cond.style.display="none";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="block";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="block";
+        document.getElementById('date1').innerHTML="Start Date";
+        document.getElementById('date2').innerHTML="End Date";
+        inpFi2.value='';
+        inpFi3.value='';
+    }
+    else if (condDateName=="thisweek"){
+        cond.style.display="none";
+        seardata.style.display="none";
+        searfildata.style.display="none";
+        searnofildata.style.display="none";
+        seardate.style.display="block";
+        condDate.style.display="block";
+        ip1.style.display="none";
+        ip2.style.display="block";
+        ip3.style.display="block";
+        document.getElementById('date1').innerHTML="Start Date";
+        document.getElementById('date2').innerHTML="End Date";
+        inpFi1.style.display="none";
+        inpFi2.style.display="block";
+        inpFi3.style.display="block";
+
+        var currentDate = new Date();
+    var firstday = new Date(currentDate.setDate(currentDate.getDate()+1 - currentDate.getDay())).toUTCString();
+    var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toUTCString();
+    var firstdate = new Date(firstday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+    var lastdate = new Date(lastday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+                    inpFi2.value=firstdate;
+                    inpFi3.value=lastdate;
+    }
+    });
+});
+</script>
+
+<script>
+    function colVal(val){
+    var colname = document.getElementById("cols").value; 
+    return colname;
+    }
+    function condVal(val){
+    var condition = document.getElementById("cond").value; 
+    return condition;
+    }
+    function condDateVal(val){
+    var conditionDate = document.getElementById("condDate").value; 
+    return conditionDate;
+    }
+
+    function dataFetch(){
+    var colval=colVal();
+    var condval=condVal();
+    var condDval=condDateVal();
+    var i;
+                    if(colval=="reseller" && condval=="any"){
+                       var i=0;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="reseller" && condval=="startwith"){
+                       var i=0;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="reseller" && condval=="endwith"){
+                       var i=0;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="reseller" && condval=="exactly"){
+                       var i=0;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="reseller" && condval=="notlike"){
+                    var i=0;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="opbal" && condval=="any"){
+                       var i=2;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="opbal" && condval=="startwith"){
+                       var i=2;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="opbal" && condval=="endwith"){
+                       var i=2;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="opbal" && condval=="exactly"){
+                       var i=2;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="opbal" && condval=="notlike"){
+                    var i=2;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="date" && condDval=="equal"){
+                       var getData=document.getElementById("testdateinp1").value;
+                       var i=5;
+                    }
+                    else if(colval=="date" && condDval=="lessequal"){
+                       var getData=document.getElementById("testdateinp1").value;
+                       var i=5;
+                    }
+                    else if(colval=="date" && condDval=="gtequal"){
+                       var getData=document.getElementById("testdateinp2").value;
+                       var i=5;
+                    }
+                    else if(colval=="date" && condDval=="notequal"){
+                       var getData=document.getElementById("testdateinp2").value;
+                       var i=5;
+                    }
+                    else if(colval=="date" && condDval=="between"){
+                       var getData=document.getElementById("testinp").value;
+                       var i=5;
+                    }
+                    else if(colval=="date" && condDval=="thisweek"){
+                    var currentDate = new Date();
+    var firstday = new Date(currentDate.setDate(currentDate.getDate()+1 - currentDate.getDay())).toUTCString();
+    var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toUTCString();
+    var firstdate = new Date(firstday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+    var lastdate = new Date(lastday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+    document.getElementById("testdateinp1").value=firstdate;
+    document.getElementById("testdateinp2").value=lastdate;
+    var i=5;
+                    }
+                    
+                    else if(colval=="type" && condval=="any"){
+                       var i=4;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="type" && condval=="startwith"){
+                       var i=4;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="type" && condval=="endwith"){
+                       var i=4;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="type" && condval=="exactly"){
+                       var i=4;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="type" && condval=="notlike"){
+                    var i=4;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="trbal" && condval=="any"){
+                       var i=1;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="trbal" && condval=="startwith"){
+                       var i=1;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="trbal" && condval=="endwith"){
+                       var i=1;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="trbal" && condval=="exactly"){
+                       var i=1;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="trbal" && condval=="notlike"){
+                    var i=1;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="clbal" && condval=="any"){
+                       var i=3;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="clbal" && condval=="startwith"){
+                       var i=3;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="clbal" && condval=="endwith"){
+                       var i=3;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="clbal" && condval=="exactly"){
+                       var i=3;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="clbal" && condval=="notlike"){
+                    var i=3;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="trby" && condval=="any"){
+                       var i=6;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="trby" && condval=="startwith"){
+                       var i=6;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="trby" && condval=="endwith"){
+                       var i=6;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="trby" && condval=="exactly"){
+                       var i=6;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="trby" && condval=="notlike"){
+                    var i=6;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+                    
+                    else if(colval=="mode" && condval=="any"){
+                       var i=7;
+                       var getData=document.getElementById("testinp").value;
+                    }
+                    else if(colval=="mode" && condval=="startwith"){
+                       var i=7;
+                       var regex='^';
+                    var getData=regex+(document.getElementById("testinp").value);          
+                    }
+                    else if(colval=="mode" && condval=="endwith"){
+                       var i=7;
+                       var regex='*$';
+                    var getData=(document.getElementById("testinp").value)+regex;          
+                    }
+                    else if(colval=="mode" && condval=="exactly"){
+                       var i=7;
+                       var sregex='^';
+                       var eregex='*$';
+                    var getData=sregex+(document.getElementById("testinp").value)+eregex;          
+                    }
+                    else if(colval=="mode" && condval=="notlike"){
+                    var i=7;
+                    var getData=document.getElementById("testinp").value;          
+                    }
+
+                    return [getData, condval, colval,i,condDval];
+        }
+</script>
+
+<script>
+var min_Date, max_Date;
+$.fn.dataTable.ext.search.push(
+    function( settings, data, dataIndex ) {
+        dataFetch()
+        var dVal = dataFetch()[3];
+            var condD = dataFetch()[4];
+    if(condD=="thisweek"){
+    var currentDate = new Date();
+    var firstday = new Date(currentDate.setDate(currentDate.getDate()+1 - currentDate.getDay())).toUTCString();
+    var lastday = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay() + 7)).toUTCString();
+    var firstdate = new Date(firstday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+    var lastdate = new Date(lastday).toLocaleDateString('en-IN',{undefined,year: "numeric",month: "2-digit",day: "2-digit",}).split( '/' ).reverse( ).join( '-' );
+    document.getElementById("testdateinp1").value=firstdate;
+    document.getElementById("testdateinp2").value=lastdate;
+    }
+    var min_date = document.getElementById("testdateinp1").value;
+      var min = new Date(min_date);
+      var max_date = document.getElementById("testdateinp2").value;
+      var max = new Date(max_date);
+
+      var startDate = new Date(data[dVal]);
+      if (!min_date && !max_date) {
+        return true;
+      }
+      if (!min_date && startDate <= max) {
+        return true;
+      }
+      else if (!max_date && startDate >= min) {
+        return true;
+      }
+      else if (startDate <= max && startDate >= min) {
+        return true;
+      }
+      return false;
+    }
+  );
+    $('#seardate').on('click', function () {
+        $('#myTable').DataTable().draw();
+    });
+
+</script>
+
+<script>
+    function noFilter(){
+        $.fn.dataTable.ext.search.push(
+    function (settings, data, dataIndex) {
+        dataFetch()
+        var getnData=dataFetch()[0];
+        var coli= dataFetch()[3];
+            var notLike = getnData;
+            if (notLike == undefined || notLike == '') {
+                return true;
+            } else {
+                var result = !(data[coli].toString().toLowerCase().includes(notLike.toLowerCase()));
+            }
+            return result;
+        }
+); 
+$('#myTable').DataTable().draw();
+}
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+      "dom": 'Bfrtip',
+      "paging": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+       buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+        "language": {
+    "info": "Total _TOTAL_ records found",
+    "infoEmpty": "No records found"
+  }
+    });
+        $('#seardata').on('click', function () {
+            dataFetch();
+            var getD = dataFetch()[0];
+            var cond = dataFetch()[1];
+            var col = dataFetch()[2];
+            var i = dataFetch()[3];
+            $('#myTable').DataTable().column(i).every(function () {
+                var column1 = this;
+                if (column1.search() !== (dataFetch()[0])) {
+                    column1.search(dataFetch()[0]).draw();
+                }
+            });
+        });
+        $('#searfildata').on('click', function () {
+            dataFetch();
+            var getD = dataFetch()[0];
+            var cond = dataFetch()[1];
+            var col = dataFetch()[2];
+            var i = dataFetch()[3];
+            $('#myTable').DataTable().column(i).search(getD,true,true,true).draw();
+            });
+    });
+</script>
+<script>
+    function reload(){
+        window.location.reload();
+    }
+</script>
+</body>
+
+</html>

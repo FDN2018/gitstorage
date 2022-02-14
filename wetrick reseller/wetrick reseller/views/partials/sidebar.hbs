@@ -1,0 +1,156 @@
+<div id="sidebar" class="active">
+    <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+            <div class="d-flex justify-content-between">
+                <div class="logo">
+                    <a href="/home" class="text-decoration-none">weTRICK</a>
+                </div>
+                <div class="toggler">
+                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu">
+
+                <li class="sidebar-item" id="home">
+                    <a href="/home" class='sidebar-link'>
+                        <i class="bi bi-house-fill"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item has-sub" id="customer">
+                    <a href="/customer" class='sidebar-link'>
+                        <i class="bi bi-people-fill"></i>
+                        <span>Customers</span>
+                    </a>
+                    <ul class="submenu" id="customerul">
+                        <li class="submenu-item" id="customeronline">
+                            <a href="/online">All Customers</a>
+                        </li>
+                        <li class="submenu-item " id="indcustonline">
+                            <a href="/onlindcust">View Individual Customers</a>
+                        </li>
+                        <li class="submenu-item " id="corcustonline">
+                            <a href="/onlcorcust">View Corporate Customers</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item has-sub" id="crcust">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-person-plus-fill"></i>
+                        <span>Create Customers</span>
+                    </a>
+                    <ul class="submenu " id="crcustul">
+                        <li class="submenu-item " id="crindcust">
+                            <a href="/individual">Individual Customer</a>
+                        </li>
+                        <li class="submenu-item " id="crcorcust">
+                            <a href="/corporate">Corporate Customer</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item has-sub" id="quickop">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-grid-1x2-fill"></i>
+                        <span>Quick Operation</span>
+                    </a>
+                    <ul class="submenu " id="quickopul">
+                        <li class="submenu-item " id="chpass">
+                            <a href="/changepassword">Change Password</a>
+                        </li>
+                        <li class="submenu-item " id="chplan">
+                            <a href="/changeplan">Change Plan</a>
+                        </li>
+                        <li class="submenu-item" id="chstatic">
+                            <a href="/changestatic" >Change Static Ip</a>
+                        </li>
+                        <li class="submenu-item " id="viewgraph">
+                            <a href="/graph">View User Graph</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item has-sub" id="lcoside">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-person-lines-fill"></i>
+                        <span>LCO Zone</span>
+                    </a>
+                    <ul class="submenu " id="lcozone">
+                        <li class="submenu-item " id="newlco">
+                            <a href="/lco">New LCO</a>
+                        </li>
+                        <li class="submenu-item " id="managelco">
+                            <a href="/viewlco">Manage LCO</a>
+                        </li>
+                        {{!-- <li class="submenu-item ">
+                            <a href="form-element-radio.html">Operator Configuration</a>
+                        </li> --}}
+                    </ul>
+                </li>
+
+                <li class="sidebar-item  has-sub" id="recharge">
+                    <a href="#" class='sidebar-link'>
+                        <i class="bi bi-cash-stack"></i>
+                        <span>Bulk Recharge</span>
+                    </a>
+                    <ul class="submenu " id="rechargeul">
+                        <li class="submenu-item " id="uprenewal">
+                            <a href="/renewal">Upcoming Renewal</a>
+                        </li>
+                        <li class="submenu-item " id="pendexp">
+                            <a href="/expired">Pending/Expired Renewal</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="sidebar-item " id="plans">
+                    <a href="/viewplan" class='sidebar-link'>
+                        <i class="bi bi-layers-fill"></i>
+                        <span>View Plans</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  " id="consession">
+                    <a href="/session" class='sidebar-link'>
+                        <i class="bi bi-stopwatch-fill"></i>
+                        <span>Concurrent Session</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  " id="complaints">
+                    <a href="/viewc" class='sidebar-link'>
+                        <i class="bi bi-flag-fill"></i>
+                        <span>Complaints</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  " id="reports">
+                    <a href="/reports" class='sidebar-link'>
+                        <i class="bi bi-file-text-fill"></i>
+                        <span>Reports</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item" id="bill">
+                    <a href="/billzone" class='sidebar-link'>
+                        <i class="bi bi-receipt"></i>
+                        <span>Billing Zone</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  " id="broad">
+                    <a href="/broadcast" class='sidebar-link'>
+                        <i class="bi bi-broadcast-pin"></i>
+                        <span>Broadcast</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    </div>
+</div>
